@@ -70,7 +70,7 @@ def convert_to_png(folder):#Gradio wymaga obrazów w formacie PNG
             os.remove(image_path)
             print(f"Converted {image_path} to {png_image_path}")
 # Wycinanie obiektów na podstawie detekcji YOLO
-def cut_out_objects(image, results, scale_factor=1.1):
+def cut_out_objects(image, results, scale_factor=1):
     cropped_objects = []
     img_array = np.array(image)
     if len(img_array.shape) == 3 and img_array.shape[2] == 4:
