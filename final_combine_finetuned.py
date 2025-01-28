@@ -21,8 +21,8 @@ print(f"Using device: {device}")
 
 yolo_model_path = os.path.join("slai\best.pt")
 custom_model_path = os.path.join("slai\best_model.pth")
-input_folder = r"Baza_ubrań"
-output_folder = r"embeddings"
+input_folder = r"slai\Baza_ubrań"
+output_folder = r"slai\embeddings"
 embeddings_file = os.path.join(output_folder, 'embeddings.npz')
 cropped_image_folder = os.path.join(os.getcwd(), "cropped_images")
 
@@ -346,12 +346,12 @@ def main():
         convert_to_png(input_folder)
 
         # Ustawienia początkowe
-        person_image_path = r"slai\refs\magda.png"  # Możliwość zmiany na inny obraz
+        person_image_path = r"slai\refs\ref.png"  # Możliwość zmiany na inny obraz
         if not os.path.exists(person_image_path):
             raise FileNotFoundError(f"Reference image not found: {person_image_path}")
 
         # Testowy obraz
-        test_image_path = r"slai\refs\magda.png"
+        test_image_path = r"slai\refs\ref.png"
         test_image = Image.open(test_image_path)
         results = yolo_model(test_image)
 
